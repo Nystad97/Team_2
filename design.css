@@ -1,4 +1,88 @@
-h1 {
-    color: grey;
-    font-size: 60px;
+  h1 {
+      color: rgb(88, 88, 88);
+      font-size: 60px;
+    }
+
+
+  body {
+
+    background-color: gainsboro;
+
   }
+
+  div.col-sm-8{
+
+    padding: 0px 100px 0px 100px;
+  }
+
+  p.SpillDescription{
+
+    line-height: 2.3;
+  }
+
+  div.container{
+    position: relative;
+    background-color: white;
+    padding: 10px 100px 0px 50px;
+    border: 2px solid gray;
+    border-radius: 5px;
+  }
+
+
+
+
+
+
+
+
+
+  /* Styles for spillområdet, grønn border temp */
+  div.SpillOmråde{
+
+    position: relative;
+    background-color: gainsboro;
+    /*border: 1px solid black;*/
+    padding: 10px;
+    margin: 20px 200px 30px 200px;
+    }
+    
+
+    #BoksISpilleOmrådet {
+
+        width: 100%;
+        height: 850px;
+        background-color: white;
+        /* border: 2px solid gray;*/
+        border-radius: 5px;
+    }
+
+    #SudokuBoks {
+    
+      width: 65%;
+      height: 850px;
+      border: 2px solid gray;
+      border-radius: 5px;
+    
+    }
+
+    #SudokuBoks {
+      position: absolute;
+      width: 75%;
+      height: 850px;
+      padding-left: 50px;
+      padding-top: 50px;
+      /*border: 2px solid gray;
+      border-radius: 5px;*/
+    
+    }
+
+    #PoengBoks{
+    float: right;
+    position: relative;
+    width: 25%;
+    height: 850px;
+    padding-left: 50px;
+    padding-top: 50px;
+    /*border: 2px solid gray;
+    border-radius: 5px;*/
+    }
