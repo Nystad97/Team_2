@@ -1,9 +1,14 @@
 /*Layout*/
+/*Ulike tilpasninger på farge, font, opacity, osv.*/
 h1 {
     color: rgb(255, 255, 255);
-    font-size: 60px;
+    font-size: 100px;
     opacity: 0.5;
+    font-family: 'Poiret One'; /*Kilde: https://fonts.google.com/specimen/Poiret+One */
   }
+  body {
+    font-family: helvetica; /*Kilde: https://www.fonts.com/font/linotype/helvetica?QueryFontType=Web&src=GoogleWebFonts */
+}
   
 /*Gamearea*/
 #sTable{
@@ -118,8 +123,3 @@ h1 {
     -webkit-transform: translate3d(-60px, -60px, 0);
     transform: translate3d(-60px, -60px, 0);
 }
-
-/*Sources:
-https://github.com/maoesx/Sudoku-/tree/master/Sudoku
-https://www.w3schools.com/bootstrap4/default.asp
-/*

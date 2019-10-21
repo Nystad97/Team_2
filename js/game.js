@@ -1,3 +1,4 @@
+//Kilde: https://github.com/maoesx/Sudoku-/tree/master/Sudoku//
 var Sudoku = {
 
     //-------------------------------GAME DATA---------------------------------
