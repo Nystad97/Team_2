@@ -1,5 +1,25 @@
 //Kilde: https://github.com/maoesx/Sudoku-/tree/master/Sudoku//
+let time = 300;
 let feil = 0;
+
+//Timer//
+function startTimer(){
+    if (time === 300){
+        timeoutFunction()
+    }
+}
+
+function timeoutFunction() {
+    time--;
+    var elem = document.getElementById("myBar");
+  document.getElementById("time").innerHTML = time;
+  document.getElementById("feil").innerHTML = feil;
+        elem.style.width = time/3 + "%";
+  if (time === 0) {
+    alert("5 minutter har gått");}
+  setTimeout(timeoutFunction, 1000)
+}
+
 var Sudoku = {
 
     //-------------------------------GAME DATA---------------------------------
@@ -55,6 +75,7 @@ var Sudoku = {
         });
 
         $('.select div').click(function(){  //if the select panel been clicked
+            startTimer();
             var thisInput = $(this).text();
             var location = $('.selectActive').attr('id').split('_');    //analyze the id to get the location of the block selected
             var thisRow = parseInt(location[1]);    //the x-axis of the block
@@ -89,7 +110,7 @@ var Sudoku = {
                          (matrix[i][j] == matrix[i][h] && j != h)   //valid rows in Sudoku rules
                          || (matrix[i][j] == matrix[h][j] && i != h)    //valid cols in Sudoku rules
                        ){
-                         $('#Block_'+i+'_'+j).addClass('sWrong');   //if the number is wrong, show it with a red background
+                         $('#Block_'+i+'_'+j).addClass('sWrong'); feil = feil + 1;  //if the number is wrong, show it with a red background
                      };
                  for(var k = 0; k < 3; k++) //valid groups in Sudoku rules
                      for(var l = 0; l < 3; l++)
@@ -105,26 +126,7 @@ var Sudoku = {
     }
 };
 
-
-
 $(document).ready(function(){
     Sudoku.start();
     Sudoku.play();
 });
-
-
-// Timer// 
-let time = 300;
-
-function timeoutFunction() {
-  time--;
-  document.getElementById("time").innerHTML = time;
-
-  if (time === 0) {
-    alert("5 minutter har gått")
-    time = 300;
-  }
-  setTimeout(timeoutFunction, 1000)
-}
-
-setTimeout(timeoutFunction, 1000);
