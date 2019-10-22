@@ -1,6 +1,5 @@
 //Kilde: https://github.com/maoesx/Sudoku-/tree/master/Sudoku//
 let time = 300;
-let feil = 0;
 let teller = 0;
 
 //Timer//
@@ -14,10 +13,10 @@ function timeoutFunction() {
     time--;
     var elem = document.getElementById("myBar");
   document.getElementById("time").innerHTML = time;
-  document.getElementById("feil").innerHTML = feil;
+  document.getElementById("teller").innerHTML = teller;
         elem.style.width = time/3 + "%"; //progressbaren følger timeren//
   if (time === 0) {
-    alert("Tiden er ute!"); time = 300} //melding kommer når tiden er ute//
+    alert("Tiden er ute!");} 
   setTimeout(timeoutFunction, 1000)
 }
 
@@ -103,6 +102,7 @@ var Sudoku = {
     //--------------------------------COMPARE FUNCTION--------------------------
     //compare numbers on the board to find potential mistake
     compare : function(){
+        teller++; //øker oversikten over antall trekk som er foretatt//
         var matrix = Sudoku.matrix;
          for(var i=0; i<9; i++){
              for(var j=0; j<9; j++){
@@ -111,7 +111,7 @@ var Sudoku = {
                          (matrix[i][j] == matrix[i][h] && j != h)   //valid rows in Sudoku rules
                          || (matrix[i][j] == matrix[h][j] && i != h)    //valid cols in Sudoku rules
                        ){
-                         $('#Block_'+i+'_'+j).addClass('sWrong'); teller = 1  //if the number is wrong, show it with a red background
+                         $('#Block_'+i+'_'+j).addClass('sWrong');  //if the number is wrong, show it with a red background
                      };
                  for(var k = 0; k < 3; k++) //valid groups in Sudoku rules
                      for(var l = 0; l < 3; l++)
@@ -124,11 +124,7 @@ var Sudoku = {
                  }
              }
          }
-    if (teller === 1){
-        feil = feil + 1;
-        teller = 0
     }
-}
 };
 
 $(document).ready(function(){
