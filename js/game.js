@@ -14,9 +14,9 @@ function timeoutFunction() {
     var elem = document.getElementById("myBar");
   document.getElementById("time").innerHTML = time;
   document.getElementById("feil").innerHTML = feil;
-        elem.style.width = time/3 + "%";
+        elem.style.width = time/3 + "%"; //progressbaren følger timeren//
   if (time === 0) {
-    alert("5 minutter har gått");}
+    alert("Tiden er ute!"); time = 300} //melding kommer når tiden er ute//
   setTimeout(timeoutFunction, 1000)
 }
 
@@ -75,7 +75,7 @@ var Sudoku = {
         });
 
         $('.select div').click(function(){  //if the select panel been clicked
-            startTimer();
+            startTimer(); //starter timeren ved første klikk på sudokuen//
             var thisInput = $(this).text();
             var location = $('.selectActive').attr('id').split('_');    //analyze the id to get the location of the block selected
             var thisRow = parseInt(location[1]);    //the x-axis of the block
@@ -110,7 +110,7 @@ var Sudoku = {
                          (matrix[i][j] == matrix[i][h] && j != h)   //valid rows in Sudoku rules
                          || (matrix[i][j] == matrix[h][j] && i != h)    //valid cols in Sudoku rules
                        ){
-                         $('#Block_'+i+'_'+j).addClass('sWrong'); feil = feil + 1;  //if the number is wrong, show it with a red background
+                         $('#Block_'+i+'_'+j).addClass('sWrong');  //if the number is wrong, show it with a red background
                      };
                  for(var k = 0; k < 3; k++) //valid groups in Sudoku rules
                      for(var l = 0; l < 3; l++)
