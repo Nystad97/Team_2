@@ -16,7 +16,7 @@ function timeoutFunction() {
   document.getElementById("teller").innerHTML = teller;
         elem.style.width = time/3 + "%"; //progressbaren følger timeren//
   if (time === 0) {
-    alert("Tiden er ute!");} 
+    alert("Tiden er ute");} 
   setTimeout(timeoutFunction, 1000)
 }
 
