@@ -1,6 +1,7 @@
 //Kilde: https://github.com/maoesx/Sudoku-/tree/master/Sudoku//
 let time = 300;
 let feil = 0;
+let teller = 0;
 
 //Timer//
 function startTimer(){
@@ -110,7 +111,7 @@ var Sudoku = {
                          (matrix[i][j] == matrix[i][h] && j != h)   //valid rows in Sudoku rules
                          || (matrix[i][j] == matrix[h][j] && i != h)    //valid cols in Sudoku rules
                        ){
-                         $('#Block_'+i+'_'+j).addClass('sWrong');  //if the number is wrong, show it with a red background
+                         $('#Block_'+i+'_'+j).addClass('sWrong'); teller = 1  //if the number is wrong, show it with a red background
                      };
                  for(var k = 0; k < 3; k++) //valid groups in Sudoku rules
                      for(var l = 0; l < 3; l++)
@@ -123,7 +124,11 @@ var Sudoku = {
                  }
              }
          }
+    if (teller === 1){
+        feil = feil + 1;
+        teller = 0
     }
+}
 };
 
 $(document).ready(function(){
