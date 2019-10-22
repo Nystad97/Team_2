@@ -1,3 +1,5 @@
+//Kilde: https://github.com/maoesx/Sudoku-/tree/master/Sudoku//
+let feil = 0;
 var Sudoku = {
 
     //-------------------------------GAME DATA---------------------------------
@@ -103,7 +105,26 @@ var Sudoku = {
     }
 };
 
+
+
 $(document).ready(function(){
     Sudoku.start();
     Sudoku.play();
 });
+
+
+// Timer// 
+let time = 300;
+
+function timeoutFunction() {
+  time--;
+  document.getElementById("time").innerHTML = time;
+
+  if (time === 0) {
+    alert("5 minutter har gått")
+    time = 300;
+  }
+  setTimeout(timeoutFunction, 1000)
+}
+
+setTimeout(timeoutFunction, 1000);

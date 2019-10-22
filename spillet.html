@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poiret One' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -12,9 +13,10 @@
     <title>Sudoku - Spillet</title>
 </head>
 <body>
-    <div class="jumbotron text-center" style="background-image: url('media/wallpaper.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; margin-bottom:0">
+    <header class="jumbotron text-center" style="background-image: url('media/wallpaper.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; margin-bottom:0">
         <h1>Sudoku</h1>
-      </div>
+    </header>
+
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
         <a class="navbar-brand" href="spillet.html">Spillet</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -51,6 +53,7 @@
               <br>
               Navnet sudoku stammer fra de japanske ordene “su” som betyr tall og “doku” som kan oversettes til alene. Det er derimot ikke japanerne som skal få æren for selve utviklingen av spillet. Man kan spore røttene tilbake til slutten av 1700-tallet da den sveitsiske matematikeren Leonhard Euler konstruerte det som kalles “det latinske kvadrat”. Det var først 200 år etter at et amerikansk magasin tok i bruk ideen om Eulers kvadrat og publiserte det som da ble kalt “Number Place” til sine lesere. Det er fremdeles ukjent hvem i magasinet som la fram idéen om spillet. Japanerne adopterte raskt konseptet, og hjernetrim ved bruk av tallspill er svært populært i landet da alfabetet deres gjør det vanskelig for dem å løse vanlige kryssord.
               <br>
+              <!--Bootstrap og “Carousel” lager en simpel lysbildefremvisning. Kilder: https://static.vecteezy.com/system/resources/previews/000/124/719/non_2x/free-sudoku-illustration-vector.jpg & https://static.vecteezy.com/system/resources/previews/000/122/943/non_2x/free-sudoku-illustration-vector.jpg-->
               <div id="slideshow" class="carousel slide" data-ride="carousel">
                 <ul class="carousel-indicators">
                   <li data-target="#slideshow" data-slide-to="0" class="active"></li>
@@ -69,8 +72,8 @@
       </div>
     </div>
         
-      <div class="jumbotron text-center" style="margin-bottom:0">
+      <footer class="jumbotron text-center" style="margin-bottom:0">
         <p>© 2019 Sudoku</p>
-      </div>
+      </footer>
 </body>
 </html>
