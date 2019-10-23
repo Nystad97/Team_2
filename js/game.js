@@ -1,4 +1,4 @@
-//Kilde: https://github.com/maoesx/Sudoku-/tree/master/Sudoku//
+//Kilde: https://github.com/maoesx/Sudoku-/tree/master/Sudoku //
 let time = 300;
 let teller = 0;
 
