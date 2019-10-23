@@ -37,7 +37,7 @@ var Sudoku = {
 
     //-----------------------------START FUNCTION-------------------------------
     //render game board and input Sudoku numbers
-    start function(){
+    start : function(){
 
         //render game board
         for (var i = 0; i < 9; i++) {
