@@ -20,9 +20,11 @@ function timeoutFunction() {
   document.getElementById("time").innerHTML = time;
   document.getElementById("teller").innerHTML = teller;
         elem.style.width = time/3 + "%"; //progressbaren følger timeren//
-  if (time === 0) {
-    alert("Tiden er ute");} 
-  setTimeout(timeoutFunction, 1000)
+        var tid = setTimeout(timeoutFunction, 1000)
+        if (time === 0) {
+    alert("Tiden er ute");
+    clearTimeout(tid);
+} 
 }
 
 var Sudoku = {
