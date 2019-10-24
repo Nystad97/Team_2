@@ -292,4 +292,3 @@ $(document).ready(function(){
     Sudoku.start();
     Sudoku.play();
 });
-

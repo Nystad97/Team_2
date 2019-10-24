@@ -3,10 +3,10 @@ h1 {
     color: rgb(255, 255, 255);
     font-size: 100px;
     opacity: 0.5;
-    font-family: 'Poiret One'; /*Kilde: https://fonts.google.com/specimen/Poiret+One */
+    font-family: 'Poiret One'; /*https://fonts.google.com/specimen/Poiret+One */
   }
   body {
-    font-family: helvetica; /*Kilde: https://www.fonts.com/font/linotype/helvetica?QueryFontType=Web&src=GoogleWebFonts */
+    font-family: helvetica; /*https://www.fonts.com/font/linotype/helvetica?QueryFontType=Web&src=GoogleWebFonts */
 }
 
 /*Speisifikasjoner for progressbaren*/
@@ -28,10 +28,10 @@ h1 {
     padding: 0;
 }
 .sGroup{
-    background: rgba(189,195,199,0.7);
+    background: rgba(202, 202, 202, 0.6);
 }
 .sGroup2{
-    background: rgba(255,255,255,0.7);
+    background: rgba(247, 247, 247, 0.6);
 }
 .sBox{
     float: left;
@@ -41,19 +41,19 @@ h1 {
     line-height: 50px;
     width: 50px;
     border-radius: 5px;
-    font-size: 40px;
-    font-weight: bolder;
+    font-size: 30px;
     text-align: center;
+
 }
 .edit{
-    color: forestgreen;
+    color: #757575;
 }
 .edit:hover{
-    background: rgba(63, 63, 63, 0.8);
+    background: #90A4AE;
     cursor: pointer;
 }
 .sWrong{
-    background: red;
+    background: #FF5722;
 }
 
 /*Numberpicker*/
@@ -67,14 +67,13 @@ h1 {
     text-align: center;
     color: white;
     font-size: 30px;
-    font-weight: bold;
     border: 1px solid white;
     border-radius: 60px;
     position: absolute;
     top: -30px;
     left: -30px;
     opacity: 0;
-    background: #2c3e50;
+
 }
 .active div{
     width: 60px;
@@ -87,50 +86,50 @@ h1 {
     font-size: 40px;
 }
 .selectActive{
-    background: grey;
+    background: #90A4AE;
 }
 .active div:first-child {
-    background: #e74c3c;
+    background: #BBDEFB;
     -webkit-transform: translate3d(0, -80px, 0);
     transform: translate3d(0, -80px, 0);
 }
 .active div:nth-child(2) {
-    background: #e67e22;
+    background: #90CAF9;
     -webkit-transform: translate3d(60px, -60px, 0);
     transform: translate3d(60px, -60px, 0);
 }
 .active div:nth-child(3) {
-    background: #f1c40f;
+    background: #64B5F6;
     -webkit-transform: translate3d(90px, -8px, 0);
     transform: translate3d(90px, -8px, 0);
 }
 .active div:nth-child(4) {
-    background: #3498db;
+    background: #42A5F5;
     -webkit-transform: translate3d(80px, 52px, 0);
     transform: translate3d(80px, 52px, 0);
 }
 .active div:nth-child(5) {
-    background: #2ecc71;
+    background: #2196F3;
     -webkit-transform: translate3d(30px, 88px, 0);
     transform: translate3d(30px, 88px, 0);
 }
 .active div:nth-child(6) {
-    background: #1abc9c;
+    background: #1E88E5;
     -webkit-transform: translate3d(-30px, 88px, 0);
     transform: translate3d(-30px, 88px, 0);
 }
 .active div:nth-child(7) {
-    background: #7f8c8d;
+    background: #1976D2;
     -webkit-transform: translate3d(-80px, 52px, 0);
     transform: translate3d(-80px, 52px, 0);
 }
 .active div:nth-child(8) {
-    background: #9b59b6;
+    background: #1565C0;
     -webkit-transform: translate3d(-90px, -8px, 0);
     transform: translate3d(-90px, -8px, 0);
 }
 .active div:nth-child(9) {
-    background: #34495e;
+    background: #0D47A1;
     -webkit-transform: translate3d(-60px, -60px, 0);
     transform: translate3d(-60px, -60px, 0);
 }
