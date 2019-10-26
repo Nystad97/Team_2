@@ -180,11 +180,11 @@ matrix5:[
         //Matrix1 funker ikke helt enda. 
         if(tilfeldigtall == 1){
         for (var i = 0; i < 9; i++) {
-            var row = $('<tr></tr>');
+            var rad = $('<tr></tr>');
             for(var j = 0; j < 9; j++){
                 var sBlock = $('<td class="sBox edit"></td>');
                 sBlock.attr('id','Block'+'_'+ i + '_' + j).text(Sudoku.matrix2[i][j]);   //store the block location in the id
-                row.append(sBlock);
+                rad.append(sBlock);
                 if(Sudoku.matrix2[i][j] != ''){  //the number in block with edit class can be changed
                     sBlock.removeClass('edit');
                 }
@@ -196,17 +196,17 @@ matrix5:[
                 }else{
                     sBlock.addClass('sGroup2');
                 }
-            $('#sTable').append(row);
+            $('#sTable').append(rad);
             }
         }
         }
         else if(tilfeldigtall == 2){
             for (var i = 0; i < 9; i++) {
-                var row = $('<tr></tr>');
+                var rad = $('<tr></tr>');
                 for(var j = 0; j < 9; j++){
                     var sBlock = $('<td class="sBox edit"></td>');
                     sBlock.attr('id','Block'+'_'+ i + '_' + j).text(Sudoku.matrix2[i][j]);   //store the block location in the id
-                    row.append(sBlock);
+                    rad.append(sBlock);
                     if(Sudoku.matrix2[i][j] != ''){  //the number in block with edit class can be changed
                         sBlock.removeClass('edit');
                     }
@@ -218,7 +218,7 @@ matrix5:[
                     }else{
                         sBlock.addClass('sGroup2');
                     }
-                $('#sTable').append(row);
+                $('#sTable').append(rad);
                 }
             }
             
@@ -230,7 +230,7 @@ matrix5:[
     play : function(){
         $('.sBox').click(function(event){   //if the block in the table been clicked
             event.stopPropagation();
-            if($(this).hasClass('edit') == true){   //if it's a editable block
+            if($(this).hasClass('edit') == true){   //Sjekker om denne ruten kan endres
                 $('.selectActive').removeClass('selectActive');
                 $(this).addClass('selectActive');
                     $('.select').css('top',event.pageY).css('left',event.pageX).addClass('active');
