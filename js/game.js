@@ -29,10 +29,10 @@ function timeoutFunction() {
 
 var Sudoku = {
 
-    //-------------------------------GAME DATA---------------------------------
-    //the Sudoku game data, game can be different if the data changes
+    //-------------------------------SPILLINNHOLD---------------------------------
+    //Innholdet til sudokuen. Sudokuen endres hvis verdiene her endres
     //Lett
-    matrix1:[  [[7],[2],[],[9],[4],[5],[],[3],[]],
+    matrise1:[  [[7],[2],[],[9],[4],[5],[],[3],[]],
         [[],[3],[9],[2],[],[6],[],[],[4]],
         [[1],[5],[],[7],[3],[8],[6],[9],[2]],
         [[6],[4],[7],[1],[],[3],[],[2],[]],
@@ -44,7 +44,7 @@ var Sudoku = {
     ],
 
     //lett
-matrix5:[  
+matrise5:[  
     [[],[],[5],  [1],[],[],   [],[4],[]],
     [[],[6],[],  [],[],[],   [],[],[9]],
     [[],[9],[7],  [],[6],[3],   [],[],[]],
@@ -58,7 +58,7 @@ matrix5:[
     [[],[1],[],  [],[],[9],   [6],[],[]]
 ],
 
-matrix5:[  
+matrise5:[  
     [[],[8],[],  [],[],[4],   [],[2],[5]],
     [[],[4],[],  [],[],[7],   [],[1],[]],
     [[5],[],[7],  [2],[],[],   [],[9],[]],
@@ -73,7 +73,7 @@ matrix5:[
 ],
 
     //Vansklig
-    matrix2:[  
+    matrise2:[  
         [[],[],[5],[3],[],[],[],[],[]],
         [[8],[],[],[],[],[],[],[2],[]],
         [[],[7],[],[],[1],[],[5],[],[]],
@@ -85,7 +85,7 @@ matrix5:[
         [[],[],[],[],[],[9],[7],[],[]]
 ],
 
-matrix3:[  
+matrise3:[  
     [[8],[],[],[],[],[],[],[],[]],
     [[],[],[7],[],[],[],[2],[],[1]],
     [[],[],[],[2],[7],[],[],[3],[]],
@@ -97,7 +97,7 @@ matrix3:[
     [[],[],[5],[],[8],[4],[1],[],[]]
 ],
 
-matrix4:[  
+matrise4:[  
     [[6],[],[],[],[],[8],[],[],[7]],
     [[5],[],[],[],[7],[],[3],[],[]],
     [[],[],[8],[],[],[],[],[],[]],
@@ -110,7 +110,7 @@ matrix4:[
 ],
 
 //Medium
-matrix5:[  
+matrise5:[  
     [[],[3],[1],  [],[6],[],   [],[],[]],
     [[],[],[],  [],[],[],   [],[],[]],
     [[6],[],[],  [8],[],[],   [],[7],[]],
@@ -124,7 +124,7 @@ matrix5:[
     [[],[],[],  [],[7],[3],   [2],[9],[]]
 ],
 
-matrix5:[  
+matrise5:[  
     [[],[],[],  [],[],[],   [9],[7],[2]],
     [[],[9],[],  [],[4],[1],   [],[8],[]],
     [[],[3],[],  [],[],[],   [],[],[]],
@@ -138,7 +138,7 @@ matrix5:[
     [[],[],[],  [],[],[4],   [],[],[]]
 ],
 
-matrix5:[  
+matrise5:[  
     [[],[2],[],  [],[],[],   [],[1],[]],
     [[],[],[],  [7],[],[2],   [9],[],[6]],
     [[8],[7],[],  [1],[],[6],   [],[],[]],
@@ -173,24 +173,24 @@ matrix5:[
 
     
     //-----------------------------START FUNCTION-------------------------------
-    //render game board and input Sudoku numbers
+    //Viser spillet og legger inn nummer
     start: function(){
 
         //render game board
-        //Matrix1 funker ikke helt enda. 
+        //matrise1 funker ikke helt enda. 
         if(tilfeldigtall == 1){
         for (var i = 0; i < 9; i++) {
             var rad = $('<tr></tr>');
             for(var j = 0; j < 9; j++){
                 var sBlock = $('<td class="sBox edit"></td>');
-                sBlock.attr('id','Block'+'_'+ i + '_' + j).text(Sudoku.matrix2[i][j]);   //store the block location in the id
+                sBlock.attr('id','Block'+'_'+ i + '_' + j).text(Sudoku.matrise2[i][j]);   //Lagre rutens lokasjon i id
                 rad.append(sBlock);
-                if(Sudoku.matrix2[i][j] != ''){  //the number in block with edit class can be changed
+                if(Sudoku.matrise2[i][j] != ''){  //Nummeret i ruten kan endres hvis ruten er redigerbar
                     sBlock.removeClass('edit');
                 }
-                var groups = Math.floor(Math.sqrt(9));  //use different color to distinguish different groups
-                var gA = Math.floor(i / groups);
-                var gB = Math.floor(j / groups);
+                var groups = Math.floor(Math.sqrt(9));  //Bruker ulike farger til de ulike valgene
+                var gA = Math.floor(i / valg);
+                var gB = Math.floor(j / valg);
                 if (gA % 2 == gB % 2) {
                     sBlock.addClass('sGroup');
                 }else{
@@ -205,14 +205,14 @@ matrix5:[
                 var rad = $('<tr></tr>');
                 for(var j = 0; j < 9; j++){
                     var sBlock = $('<td class="sBox edit"></td>');
-                    sBlock.attr('id','Block'+'_'+ i + '_' + j).text(Sudoku.matrix2[i][j]);   //store the block location in the id
+                    sBlock.attr('id','Block'+'_'+ i + '_' + j).text(Sudoku.matrise2[i][j]);   //Lagre rutens lokasjon i id
                     rad.append(sBlock);
-                    if(Sudoku.matrix2[i][j] != ''){  //the number in block with edit class can be changed
+                    if(Sudoku.matrise2[i][j] != ''){  //Nummeret i ruten kan endres hvis ruten er redigerbar
                         sBlock.removeClass('edit');
                     }
-                    var groups = Math.floor(Math.sqrt(9));  //use different color to distinguish different groups
-                    var gA = Math.floor(i / groups);
-                    var gB = Math.floor(j / groups);
+                    var valg = Math.floor(Math.sqrt(9));  //Bruker ulike farger til de ulike valgene
+                    var gA = Math.floor(i / valg);
+                    var gB = Math.floor(j / valg);
                     if (gA % 2 == gB % 2) {
                         sBlock.addClass('sGroup');
                     }else{
@@ -226,9 +226,9 @@ matrix5:[
     },
 
     //------------------------------------PLAY FUNCTION-------------------------
-    //handle click event in the game playing
+    //Håndterer ulike museklikk fra bruker
     play : function(){
-        $('.sBox').click(function(event){   //if the block in the table been clicked
+        $('.sBox').click(function(event){   //Hvis ruten blir klikket på
             event.stopPropagation();
             if($(this).hasClass('edit') == true){   //Sjekker om denne ruten kan endres
                 $('.selectActive').removeClass('selectActive');
@@ -237,49 +237,49 @@ matrix5:[
             }
         });
 
-        $('.select div').click(function(){  //if the select panel been clicked
+        $('.select div').click(function(){  //Hvis sudokuen blir klikket på
             startTimer(); //starter timeren ved første klikk på sudokuen//
-            var thisInput = $(this).text();
-            var location = $('.selectActive').attr('id').split('_');    //analyze the id to get the location of the block selected
-            var thisRow = parseInt(location[1]);    //the x-axis of the block
-            var thisCol = parseInt(location[2]);    //the y-axis of the block
-            Sudoku.matrix2[thisRow][thisCol] = parseInt(thisInput);  //update the input to the data matrix
+            var inputen = $(this).text();
+            var location = $('.selectActive').attr('id').split('_');    //Sjekker id'en for å få lokasjonen på den valgte ruten
+            var raden = parseInt(location[1]);    //X-aksen
+            var kolonnen = parseInt(location[2]);    //Y-aksen
+            Sudoku.matrise2[raden][kolonnen] = parseInt(inputen);  //Fyller inn valgt input
 
-            //check the number input
+            //Sjekker input
             $('.sWrong').removeClass('sWrong');
-            Sudoku.compare();   //check the input by calling the compare function
+            Sudoku.sjekk();   //Sjekker inputen ved å kalle på funksjonen "sjekk"
 
-            //after select a number
-            $('.selectActive').text(parseInt(thisInput));            //set the number to block
+            //Etter bruker har valgt innput
+            $('.selectActive').text(parseInt(inputen));            //Fyller inn valgt tall
             $('.selectActive').removeClass('selectActive');
             $('.select').removeClass('active');
         });
 
-        $('html').click(function(){     //the user can click any other part of the page (like background) to close the select panel
+        $('html').click(function(){     //Bruker kan klikke hvor som helst på siden for å få bort menyen
             $('.selectActive').removeClass('selectActive');
             $('.select').removeClass('active');
         })
 
     },
 
-    //--------------------------------COMPARE FUNCTION--------------------------
-    //compare numbers on the board to find potential mistake
-    compare : function(){
+    //--------------------------------SJEKK FUNCTION--------------------------
+    //Sjekker verdiene på brettet for å finne evt feil
+    sjekk : function(){
         teller++; //øker oversikten over antall trekk som er foretatt//
-        var matrix2 = Sudoku.matrix2;
+        var matrise2 = Sudoku.matrise2;
          for(var i=0; i<9; i++){
              for(var j=0; j<9; j++){
                  for(var h=0; h<9; h++){
                      if(
-                         (matrix2[i][j] == matrix2[i][h] && j != h)   //valid rows in Sudoku rules
-                         || (matrix2[i][j] == matrix2[h][j] && i != h)    //valid cols in Sudoku rules
+                         (matrise2[i][j] == matrise2[i][h] && j != h)   //Gyldige rader i sudoku
+                         || (matrise2[i][j] == matrise2[h][j] && i != h)    //Gyldige kolonner i sudoku
                        ){
-                         $('#Block_'+i+'_'+j).addClass('sWrong');  //if the number is wrong, show it with a red background
+                         $('#Block_'+i+'_'+j).addClass('sWrong');  //Hvis input er feil, vis dette med rød bakgrunn
                      };
-                 for(var k = 0; k < 3; k++) //valid groups in Sudoku rules
+                 for(var k = 0; k < 3; k++) //Gyldig valg innenfor reglene
                      for(var l = 0; l < 3; l++)
                          if(
-                            (matrix2[i][j] == matrix2[parseInt(i / 3) * 3 + k][parseInt(j / 3) * 3 + l])
+                            (matrise2[i][j] == matrise2[parseInt(i / 3) * 3 + k][parseInt(j / 3) * 3 + l])
                             && (!(i == parseInt(i / 3) * 3+k && j == parseInt(j / 3) * 3+l))
                             ){
                                  $('#Block_'+i+'_'+j).addClass('sWrong');
