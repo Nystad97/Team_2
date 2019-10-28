@@ -41,7 +41,9 @@ var Sudokulett = {
 ],
 }
 
+
 var Sudokumedium = {
+
     matrise4:[  
         [[],[3],[1],  [],[6],[],   [],[],[]],
         [[],[],[],  [],[],[],   [],[],[]],
@@ -84,6 +86,8 @@ var Sudokumedium = {
         [[],[4],[],  [],[],[],   [],[2],[]]
     ],
     }
+
+
 
 var Sudokuvanskelig = {
 
