@@ -213,28 +213,30 @@ matrise5:[
 
         //render game board
         //matrise1 funker ikke helt enda. 
-        if(tilfeldigtall == 1){
-        for (var i = 0; i < 9; i++) {
-            var rad = $('<tr></tr>');
-            for(var j = 0; j < 9; j++){
-                var sBlock = $('<td class="sBox edit"></td>');
-                sBlock.attr('id','Block'+'_'+ i + '_' + j).text(Sudoku.matrise2[i][j]);   //Lagre rutens lokasjon i id
-                rad.append(sBlock);
-                if(Sudoku.matrise2[i][j] != ''){  //Nummeret i ruten kan endres hvis ruten er redigerbar
-                    sBlock.removeClass('edit');
+            if(tilfeldigtall == 1){
+                for (var i = 0; i < 9; i++) {
+                    var rad = $('<tr></tr>');
+                    for(var j = 0; j < 9; j++){
+                        var sBlock = $('<td class="sBox edit"></td>');
+                        sBlock.attr('id','Block'+'_'+ i + '_' + j).text(Sudoku.matrise2[i][j]);   //Lagre rutens lokasjon i id
+                        rad.append(sBlock);
+                        if(Sudoku.matrise2[i][j] != ''){  //Nummeret i ruten kan endres hvis ruten er redigerbar
+                            sBlock.removeClass('edit');
+                        }
+                        var valg = Math.floor(Math.sqrt(9));  //Bruker ulike farger til de ulike valgene
+                        var gA = Math.floor(i / valg);
+                        var gB = Math.floor(j / valg);
+                        if (gA % 2 == gB % 2) {
+                            sBlock.addClass('sGroup');
+                        }else{
+                            sBlock.addClass('sGroup2');
+                        }
+                    $('#sTable').append(rad);
+                    }
                 }
-                var groups = Math.floor(Math.sqrt(9));  //Bruker ulike farger til de ulike valgene
-                var gA = Math.floor(i / valg);
-                var gB = Math.floor(j / valg);
-                if (gA % 2 == gB % 2) {
-                    sBlock.addClass('sGroup');
-                }else{
-                    sBlock.addClass('sGroup2');
-                }
-            $('#sTable').append(rad);
+                
             }
-        }
-        }
+        
         else if(tilfeldigtall == 2){
             for (var i = 0; i < 9; i++) {
                 var rad = $('<tr></tr>');
