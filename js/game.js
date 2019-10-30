@@ -1,4 +1,3 @@
-//Kilde: https://github.com/maoesx/Sudoku-/tree/master/Sudoku //
 let time = 300;
 let teller = 0;
 let tilfeldigtall = Math.floor((Math.random()*2)+1)
@@ -8,7 +7,6 @@ console.log(tilfeldigtall);
 function startTimer(){
     if (time === 300){
         timeoutFunction()
-        
     }
 }
 
@@ -36,9 +34,7 @@ var Sudoku = {
     start: function(){
 
         //render game board
-        //matrise1 funker ikke helt enda. 
             $('#sTable').empty()
-            
                 for (var i = 0; i < 9; i++) {
                     var rad = $('<tr></tr>');
                     for(var j = 0; j < 9; j++){
@@ -136,8 +132,6 @@ $(document).ready(function(){
 });
 
 //brett
-
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
@@ -159,7 +153,6 @@ var Sudokulett = [
         [[],[],[8],[5],[7],[9],[3],[4],[]]
     ],
 
-    //lett
     [  
        [[],[],[5],  [1],[],[],   [],[4],[]],
        [[],[6],[],  [],[],[],   [],[],[9]],
