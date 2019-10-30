@@ -133,22 +133,3 @@ h1 {
     -webkit-transform: translate3d(-60px, -60px, 0);
     transform: translate3d(-60px, -60px, 0);
 }
-
-
-
-}
-/* Vansklighetsgrad button style  */
-.vanskelighetsgrad {
-    background-color: #1565C0; 
-    border: none;
-    color: white;
-    padding: 10px 50px 10px 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 2px 0px;
-    cursor: pointer;
-    width: 300px;
-    
-    }
