@@ -287,12 +287,16 @@ function lett() {
     Sudoku.start();
     Sudoku.play();
     Sudoku.sjekk();
+    teller = 0;
+    time = 300;
 }
 
 function middels() {
     Sudoku.matrise = getRandomListElement(Sudokumiddels)
     Sudoku.start();
     Sudoku.play();
+    teller = 0;
+    time = 300;
 }
 
 function vanskelig() {
@@ -300,6 +304,8 @@ function vanskelig() {
     Sudoku.start();
     Sudoku.play();
     Sudoku.sjekk();
+    teller = 0;
+    time = 300;
 }
 
 middels()
