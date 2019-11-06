@@ -59,9 +59,9 @@ var Sudoku = {
         }
     ,
 
-    //------------------------------------PLAY FUNCTION-------------------------
+    //------------------------------------SPILL FUNCTION-------------------------
     //Håndterer ulike museklikk fra bruker
-    play : function(){
+    spill : function(){
         $('.sBox').click(function(event){   //Hvis ruten blir klikket på
             event.stopPropagation();
             if($(this).hasClass('edit') == true){   //Sjekker om denne ruten kan endres
@@ -126,7 +126,7 @@ var Sudoku = {
 
 $(document).ready(function(){
     Sudoku.start();
-    Sudoku.play();
+    Sudoku.spill();
 });
 
 //brett
@@ -276,7 +276,7 @@ var Sudokuvanskelig = [
 function lett() {
     Sudoku.matrise = getRandomListElement(Sudokulett)
     Sudoku.start();
-    Sudoku.play();
+    Sudoku.spill();
     Sudoku.sjekk();
     teller = 0;
     time = 300;
@@ -285,7 +285,7 @@ function lett() {
 function middels() {
     Sudoku.matrise = getRandomListElement(Sudokumiddels)
     Sudoku.start();
-    Sudoku.play();
+    Sudoku.spill();
     Sudoku.sjekk();
     teller = 0;
     time = 300;
@@ -294,7 +294,7 @@ function middels() {
 function vanskelig() {
     Sudoku.matrise = getRandomListElement(Sudokuvanskelig)
     Sudoku.start();
-    Sudoku.play();
+    Sudoku.spill();
     Sudoku.sjekk();
     teller = 0;
     time = 300;
