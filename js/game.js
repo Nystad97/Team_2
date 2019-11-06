@@ -1,7 +1,5 @@
 let time = 300;
 let teller = 0;
-let tilfeldigtall = Math.floor((Math.random()*2)+1)
-console.log(tilfeldigtall);
 
 //Timer//
 function startTimer(){
@@ -139,7 +137,7 @@ function getRandomInt(max) {
 function getRandomListElement(list) {
     return list[getRandomInt(list.length)]
 }
-
+//3 brett, ett array, valgt tilfeldig
 var Sudokulett = [
 
     [  [[7],[2],[],[9],[4],[5],[],[3],[]],
@@ -288,6 +286,7 @@ function middels() {
     Sudoku.matrise = getRandomListElement(Sudokumiddels)
     Sudoku.start();
     Sudoku.play();
+    Sudoku.sjekk();
     teller = 0;
     time = 300;
 }
